@@ -1,0 +1,12 @@
+/*
+ 
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+.datetimepicker-group {
+	padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+

@@ -1,0 +1,52 @@
+<%- model_class = Event -%>
+
+<div class="">
+  <%= image_tag @event.logo.url(:banner), :class => 'img-thumbnail' %>
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <h2><%= @event.name %></h2>
+
+        <h4>
+          <span class="label label-info">
+            <i class="fa fa-clock-o"></i>
+          </span>
+          <span class="label label-info">
+            <%= @event.start_time.respond_to?('strftime') ? @event.start_time.strftime('%Y-%m-%d %H:%M'): '' %> - 
+            <%= @event.end_time.respond_to?('strftime') ? @event.end_time.strftime('%Y-%m-%d %H:%M') : '' %>
+          </span>
+        </h4>
+        
+
+        <h4>
+          <span class="label label-default">
+            <i class="fa fa-location-arrow"></i>
+          </span>
+          <span class="label label-default">
+            <%= @event.location %>
+          </span>
+        </h4>
+
+        <p><%= simple_format(@event.description) %></p> 
+
+       </div>
+    </div>
+
+    <% if can?(:update, @event) and can?(:destroy, @event) %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_event_path(@event), :class => 'btn btn-default' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        event_path(@event),
+                        :method => 'delete',
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-danger' %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+

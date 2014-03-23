@@ -1,0 +1,27 @@
+<%= link_to t('.new', :default => t("New event")), new_event_path, :class => 'btn btn-primary' %>
+
+
+<div class="page-header">
+  <h1>Events</h1>
+</div>
+
+  <div class="list-group">
+   <% @events.each do |event| %>
+      <a href="<%= event_path(event) %>" class="list-group-item">
+        <div class="row">
+          <div class="col-sm-2">
+             <%= image_tag event.logo.url(:thumb), :class => 'img-thumbnail' %>
+          </div>
+
+          <div class="col-sm-8">
+            <h4 class="list-group-item-heading"><%= event.name %></h4>
+            <p class="list-group-item-text"><%= simple_format(truncate(event.description, :length => 130)) %></p>
+            <span class="badge"> <%= event.start_time.respond_to?('strftime') ? event.start_time.strftime('%Y-%m-%d %H:%M') : '' %></span>
+          </div>
+        </div>
+        
+      </a>
+    <% end %> 
+  </div>
+
+ 
