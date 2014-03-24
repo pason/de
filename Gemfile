@@ -22,6 +22,8 @@ gem 'twitter-bootswatch-rails-fontawesome', '~> 4.0'
 gem "paperclip", "~> 4.1"
 gem 'friendly_id', '~> 5.0.0'
 gem "cancan"
+gem "puma"
+gem 'therubyracer', :platforms => :ruby
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -31,8 +33,12 @@ end
 group :development do
   gem 'execjs'
   gem "annotate", "~> 2.5.0"
-  gem 'therubyracer', :platforms => :ruby
   gem 'debugger'
+  gem 'capistrano', '~> 3.1.0'
+	gem 'capistrano-rails', '~> 1.1.0'
+	gem 'capistrano-bundler', '~> 1.1.2'
+	gem 'capistrano-rbenv'
+	gem 'capistrano-rvm'
 end
 
 group :development, :test do
