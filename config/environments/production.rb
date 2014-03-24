@@ -78,7 +78,5 @@ Dancevent::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.secret_key = 'be69c37162e2630f827876daf50a7941d48cdd7c671432afbb05c5fa368ea3607ca7ca68974b1f0aabc717495f760ee9d5c1465bd7f6d7f4f7a1fa15e4120c07'
-
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
