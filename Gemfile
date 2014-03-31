@@ -23,6 +23,8 @@ gem "paperclip", "~> 4.1"
 gem 'friendly_id', '~> 5.0.0'
 gem "cancan"
 gem "puma"
+gem 'capistrano-puma', require: false
+
 gem 'therubyracer', :platforms => :ruby
 
 group :doc do

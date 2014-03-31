@@ -1,5 +1,6 @@
 require 'capistrano/bundler'
 require 'capistrano/rails'
+require 'capistrano/puma'
 
  desc "Check that we can access everything"
     task :check_write_permissions do
