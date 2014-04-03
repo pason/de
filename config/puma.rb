@@ -1,4 +1,4 @@
-rails_env = ENV['RAILS_ENV'] || 'development'
+rails_env = 'production'
 
 threads 4,4
 
